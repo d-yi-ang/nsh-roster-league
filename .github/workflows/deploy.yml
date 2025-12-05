@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]  # 或你主分支的名字，如 master
+    branches: [ master ] 
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -27,7 +28,6 @@ jobs:
 
       - name: Build static site
         run: npm run build
-        # 默认输出到 build/（CRA）或 dist/（Vite）
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
